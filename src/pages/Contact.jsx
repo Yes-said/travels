@@ -9,7 +9,7 @@ export default function Contact() {
                 
                 <div className="flex flex-col lg:flex-row lg:space-x-8">
                     {/* Contact Form */}
-                    <div className="bg-white shadow-md rounded-lg p-8 lg:w-1/2 mb-8 lg:mb-0">
+                    <div className="bg-white shadow-md rounded-lg p-8 lg:w-1/2 w-full mb-8 lg:mb-0">
                         <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
                         <form>
                             <div className="mb-4">
@@ -50,7 +50,7 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500"
+                                className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 w-full md:w-auto"
                             >
                                 Send Message
                             </button>
@@ -58,7 +58,7 @@ export default function Contact() {
                     </div>
 
                     {/* Contact Information */}
-                    <div className="lg:w-1/2">
+                    <div className="lg:w-1/2 w-full">
                         <div className="bg-white shadow-md rounded-lg p-8 mb-8">
                             <h2 className="text-2xl font-semibold mb-4">Contact Details</h2>
                             <p className="mb-4">
