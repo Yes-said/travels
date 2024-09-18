@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -17,10 +19,10 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
-                            <li><a href="#home" className="hover:text-gray-200">Home</a></li>
-                            <li><a href="#destinations" className="hover:text-gray-200">Destinations</a></li>
-                            <li><a href="#tours" className="hover:text-gray-200">Tours</a></li>
-                            <li><a href="#contact" className="hover:text-gray-200">Contact</a></li>
+                            <li><Link to={"/"} className="hover:text-gray-200">Home</Link></li>
+                           <li><Link to={"/destinations"} className="hover:text-gray-200">Destinations</Link></li>
+                           <li><Link to={"/tours"} className="hover:text-gray-200">Tours</Link></li>
+                           <li><Link to={"/contact"} className="hover:text-gray-200">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -28,7 +30,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                         <p>Email: info@travelandexplore.com</p>
-                        <p>Phone: +123 456 789</p>
+                        <p>Phone: +254 456 789</p>
                         <p>Address: 123 Travel St, Adventure City</p>
                         <div className="flex space-x-4 mt-4">
                             {/* Social Media Icons */}

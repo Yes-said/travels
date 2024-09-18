@@ -1,26 +1,28 @@
 import { Link } from 'react-router-dom';
-
+import safari from '../assets/safari.jpeg'; // Verify this path and image format
+import gateway from '../assets/gateway.jpeg'; // Verify this path and image format
+import trek from '../assets/trek.jpeg'; // Verify this path and image format
 export default function Tours() {
     const tours = [
         {
             id: 1,
             title: 'Safari Adventure',
             description: 'Experience the wildlife like never before with our Safari Adventure package.',
-            imageUrl: 'https://example.com/safari.jpg',
+            imageUrl: safari, // This should work if the path is correct
             price: '$1,200',
         },
         {
             id: 2,
             title: 'Beach Getaway',
             description: 'Relax on the sandy beaches with our exclusive Beach Getaway package.',
-            imageUrl: 'https://example.com/beach.jpg',
+            imageUrl: gateway,
             price: '$900',
         },
         {
             id: 3,
             title: 'Mountain Trek',
             description: 'Conquer the peaks with our Mountain Trek adventure package.',
-            imageUrl: 'https://example.com/mountain.jpg',
+            imageUrl: trek,
             price: '$1,500',
         },
     ];

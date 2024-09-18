@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import bali from "../assets/bali.jpg"
+import sidney from "../assets/sidney.jpeg"
+import rome from "../assets/rome.jpeg"
 export default function DestinationPage() {
     return (
         <>
@@ -8,15 +12,14 @@ export default function DestinationPage() {
                     className="bg-cover bg-center h-screen flex items-center justify-center"
                     style={{ backgroundImage: "url('path_to_destination_hero_image.jpg')" }}
                 >
-                    <div className="text-center text-white px-4">
+                    <div className="text-center text-black px-4">
                         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Explore Our Featured Destinations</h1>
                         <p className="text-base sm:text-lg mb-8">Find your perfect getaway with our curated selection of world-class destinations.</p>
-                        <a
-                            href="#destinations-list"
+                        <Link to={"/destinations-list"} 
                             className="bg-yellow-400 text-blue-600 py-2 px-6 rounded hover:bg-yellow-300 transition-colors duration-200"
                         >
                             View Destinations
-                        </a>
+                        </Link>
                     </div>
                 </section>
 
@@ -27,8 +30,8 @@ export default function DestinationPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {/* Destination 1 */}
                             <div className="bg-white shadow-md rounded overflow-hidden">
-                                <img src="destination1.jpg" alt="Destination 1" className="w-full h-48 object-cover" />
-                                <div className="p-4">
+                            <img src={bali} alt="bali" className="w-full h-48 object-cover" />
+                            <div className="p-4">
                                     <h3 className="text-xl font-bold mb-2">Bali, Indonesia</h3>
                                     <p className="mb-4">Experience tropical paradise with Bali’s stunning beaches, temples, and culture.</p>
                                     <a
@@ -42,7 +45,7 @@ export default function DestinationPage() {
 
                             {/* Destination 2 */}
                             <div className="bg-white shadow-md rounded overflow-hidden">
-                                <img src="destination2.jpg" alt="Destination 2" className="w-full h-48 object-cover" />
+                            <img src={sidney} alt="sidney" className="w-full h-48 object-cover" />
                                 <div className="p-4">
                                     <h3 className="text-xl font-bold mb-2">Sydney, Australia</h3>
                                     <p className="mb-4">Discover the iconic Sydney Opera House and enjoy Australia’s vibrant culture.</p>
@@ -57,7 +60,7 @@ export default function DestinationPage() {
 
                             {/* Destination 3 */}
                             <div className="bg-white shadow-md rounded overflow-hidden">
-                                <img src="destination3.jpg" alt="Destination 3" className="w-full h-48 object-cover" />
+                            <img src={rome} alt="rome" className="w-full h-48 object-cover" />
                                 <div className="p-4">
                                     <h3 className="text-xl font-bold mb-2">Rome, Italy</h3>
                                     <p className="mb-4">Step back in time and explore ancient Roman landmarks in this historical city.</p>
