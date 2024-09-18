@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import destination1 from "../assets/destination1.jpg"
-import destination2 from "../assets/destination2.jpeg"
-import destination3 from "../assets/destination3.jpeg"
+import destination1 from "../assets/destination1.jpg";
+import destination2 from "../assets/destination2.jpeg";
+import destination3 from "../assets/destination3.jpeg";
+
 export default function IndexPage() {
     return (
         <>
@@ -10,19 +11,21 @@ export default function IndexPage() {
                 <section
                     id="home"
                     className="bg-cover bg-center h-screen flex items-center justify-center"
+                    style={{ backgroundImage: `url(${destination1})` }}
                 >
-                    <div className="text-center text-black px-4">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                    <div className="text-center text-white bg-black bg-opacity-50 px-6 py-4 rounded-md">
+                        <h1 className="text-3xl md:text-5xl font-bold mb-4">
                             Discover New Destinations
                         </h1>
-                        <p className="text-base md:text-lg mb-6 md:mb-8">
+                        <p className="text-sm md:text-lg mb-6">
                             Explore the world with our exclusive tours
                         </p>
-                            <Link to={"/tours"}
-                            className="bg-yellow-400 text-blue-600 py-2 px-6 rounded hover:bg-yellow-300 text-sm md:text-base"
+                        <Link
+                            to="/tours"
+                            className="bg-yellow-400 text-blue-600 py-2 px-6 rounded hover:bg-yellow-300 text-sm md:text-base transition ease-in-out duration-300"
                         >
                             View Tours
-                            </Link>
+                        </Link>
                     </div>
                 </section>
 
@@ -32,46 +35,28 @@ export default function IndexPage() {
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             Popular Destinations
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="bg-white shadow-md rounded overflow-hidden">
-                            <img
-  src={destination1}
-  alt="Destination 1"
-  className="w-full h-40 md:h-48 object-cover"
-/>
-                                <div className="p-4">
-                                    <h3 className="text-lg md:text-xl font-bold mb-2">Paris</h3>
-                                    <p className="text-sm md:text-base">
-                                        Discover the beauty of the City of Lights with our curated tours.
-                                    </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[destination1, destination2, destination3].map((destination, idx) => (
+                                <div key={idx} className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                                    <img
+                                        src={destination}
+                                        alt={`Destination ${idx + 1}`}
+                                        className="w-full h-56 object-cover"
+                                    />
+                                    <div className="p-4">
+                                        <h3 className="text-lg md:text-xl font-bold mb-2">
+                                            {idx === 0 ? "Paris" : idx === 1 ? "Tokyo" : "Santorini"}
+                                        </h3>
+                                        <p className="text-sm md:text-base">
+                                            {idx === 0
+                                                ? "Discover the beauty of the City of Lights."
+                                                : idx === 1
+                                                ? "Experience the blend of tradition and modernity."
+                                                : "Enjoy stunning sunsets on this Greek island."}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="bg-white shadow-md rounded overflow-hidden">
-                                <img
-                                    src={destination2}
-                                    alt="Destination 2"
-                                    className="w-full h-40 md:h-48 object-cover"
-                                />
-                                <div className="p-4">
-                                    <h3 className="text-lg md:text-xl font-bold mb-2">Tokyo</h3>
-                                    <p className="text-sm md:text-base">
-                                        Experience the blend of tradition and modernity in Japan's capital city.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="bg-white shadow-md rounded overflow-hidden">
-                                <img
-                                    src={destination3}
-                                    alt="Destination 3"
-                                    className="w-full h-40 md:h-48 object-cover"
-                                />
-                                <div className="p-4">
-                                    <h3 className="text-lg md:text-xl font-bold mb-2">Santorini</h3>
-                                    <p className="text-sm md:text-base">
-                                        Enjoy stunning sunsets and whitewashed architecture on this Greek island.
-                                    </p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -86,30 +71,21 @@ export default function IndexPage() {
                             Choose from a variety of tour packages designed for every kind of traveler.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div className="bg-white text-blue-600 shadow-md rounded p-6">
-                                <h3 className="text-xl md:text-2xl font-bold mb-4">European Adventure</h3>
-                                <p className="mb-4 text-sm md:text-base">
-                                    10 days | Explore France, Italy, and Switzerland.
-                                </p>
-                                <a
-                                    href="#book"
-                                    className="bg-yellow-400 text-blue-600 py-2 px-4 rounded hover:bg-yellow-300 text-sm md:text-base"
-                                >
-                                    Book Now
-                                </a>
-                            </div>
-                            <div className="bg-white text-blue-600 shadow-md rounded p-6">
-                                <h3 className="text-xl md:text-2xl font-bold mb-4">Asian Discovery</h3>
-                                <p className="mb-4 text-sm md:text-base">
-                                    14 days | Visit Japan, China, and Thailand.
-                                </p>
-                                <a
-                                    href="#book"
-                                    className="bg-yellow-400 text-blue-600 py-2 px-4 rounded hover:bg-yellow-300 text-sm md:text-base"
-                                >
-                                    Book Now
-                                </a>
-                            </div>
+                            {[
+                                { title: "European Adventure", description: "10 days | Explore France, Italy, and Switzerland." },
+                                { title: "Asian Discovery", description: "14 days | Visit Japan, China, and Thailand." },
+                            ].map((tour, idx) => (
+                                <div key={idx} className="bg-white text-blue-600 shadow-md rounded p-6">
+                                    <h3 className="text-xl md:text-2xl font-bold mb-4">{tour.title}</h3>
+                                    <p className="mb-4 text-sm md:text-base">{tour.description}</p>
+                                    <a
+                                        href="#book"
+                                        className="bg-yellow-400 text-blue-600 py-2 px-4 rounded hover:bg-yellow-300 text-sm md:text-base transition ease-in-out duration-300"
+                                    >
+                                        Book Now
+                                    </a>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -136,7 +112,7 @@ export default function IndexPage() {
                             ></textarea>
                             <button
                                 type="submit"
-                                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+                                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition ease-in-out duration-300"
                             >
                                 Send Message
                             </button>
