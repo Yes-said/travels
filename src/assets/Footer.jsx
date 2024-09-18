@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer className="bg-blue-600 text-white py-8 mt-auto">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {/* About Section */}
                     <div>
                         <h3 className="text-2xl font-bold mb-4">Travel & Explore</h3>
@@ -46,8 +46,8 @@ export default function Footer() {
                 </div>
 
                 {/* Copyright and Powered by */}
-                <div className="mt-8 flex justify-between items-center">
-                    <span className="text-white font-medium text-sm sm:text-base">
+                <div className="mt-8 flex flex-col sm:flex-row justify-between items-center text-center">
+                    <span className="text-white font-medium text-sm sm:text-base mb-4 sm:mb-0">
                         &copy; {currentYear} Travel & Explore. All rights reserved.
                     </span>
                     <span className="text-white font-medium text-sm sm:text-base">
