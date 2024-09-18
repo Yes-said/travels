@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import bali from "../assets/bali.jpeg";
 import sidney from "../assets/sidney.jpeg";
 import rome from "../assets/rome.jpeg";
-
+import life from "../assets/life.jpeg";
 export default function DestinationPage() {
     return (
         <>
             <main>
                 {/* Hero Section */}
                 <section
-                    id="destination-hero"
+                    id="home"
                     className="bg-cover bg-center h-screen flex items-center justify-center"
-                    style={{ backgroundImage: "url('path_to_destination_hero_image.jpg')" }}
+                    style={{ backgroundImage: `url(${rome})` }}
                 >
                     <div className="text-center text-black px-4">
                         <h1 className="text-3xl sm:text-5xl font-bold mb-4">Explore Our Featured Destinations</h1>
