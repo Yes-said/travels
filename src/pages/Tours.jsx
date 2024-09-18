@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import safari from '../assets/safari.jpeg'; // Verify this path and image format
-import gateway from '../assets/gateway.jpeg'; // Verify this path and image format
-import trek from '../assets/trek.jpeg'; // Verify this path and image format
+import safari from '../assets/safari.jpeg'; // Ensure this path and format are correct
+import gateway from '../assets/gateway.jpeg'; // Ensure this path and format are correct
+import trek from '../assets/trek.jpeg'; // Ensure this path and format are correct
+
 export default function Tours() {
     const tours = [
         {
             id: 1,
             title: 'Safari Adventure',
             description: 'Experience the wildlife like never before with our Safari Adventure package.',
-            imageUrl: safari, // This should work if the path is correct
+            imageUrl: safari,
             price: '$1,200',
         },
         {
@@ -36,7 +37,10 @@ export default function Tours() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {tours.map((tour) => (
-                        <div key={tour.id} className="bg-white shadow-lg rounded-lg overflow-hidden transform transition hover:scale-105">
+                        <div
+                            key={tour.id}
+                            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+                        >
                             <img
                                 src={tour.imageUrl}
                                 alt={tour.title}
@@ -55,7 +59,7 @@ export default function Tours() {
                                     </span>
                                     <Link
                                         to={`/tours/${tour.id}`}
-                                        className="bg-blue-600 text-white py-1 px-3 sm:py-2 sm:px-4 rounded hover:bg-blue-500 transition"
+                                        className="bg-blue-600 text-white py-1.5 px-3 sm:py-2 sm:px-4 rounded hover:bg-blue-500 transition-colors"
                                     >
                                         View Details
                                     </Link>
