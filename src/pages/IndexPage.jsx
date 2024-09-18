@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import destination1 from "../assets/destination1.jpg"
+import destination2 from "../assets/destination2.jpeg"
+import destination3 from "../assets/destination3.jpeg"
 export default function IndexPage() {
     return (
         <>
@@ -6,21 +10,19 @@ export default function IndexPage() {
                 <section
                     id="home"
                     className="bg-cover bg-center h-screen flex items-center justify-center"
-                    style={{ backgroundImage: "url('path_to_your_image.jpg')" }}
                 >
-                    <div className="text-center text-white px-4">
+                    <div className="text-center text-black px-4">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
                             Discover New Destinations
                         </h1>
                         <p className="text-base md:text-lg mb-6 md:mb-8">
                             Explore the world with our exclusive tours
                         </p>
-                        <a
-                            href="#tours"
+                            <Link to={"/tours"}
                             className="bg-yellow-400 text-blue-600 py-2 px-6 rounded hover:bg-yellow-300 text-sm md:text-base"
                         >
                             View Tours
-                        </a>
+                            </Link>
                     </div>
                 </section>
 
@@ -32,11 +34,11 @@ export default function IndexPage() {
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div className="bg-white shadow-md rounded overflow-hidden">
-                                <img
-                                    src="destination1.jpg"
-                                    alt="Destination 1"
-                                    className="w-full h-40 md:h-48 object-cover"
-                                />
+                            <img
+  src={destination1}
+  alt="Destination 1"
+  className="w-full h-40 md:h-48 object-cover"
+/>
                                 <div className="p-4">
                                     <h3 className="text-lg md:text-xl font-bold mb-2">Paris</h3>
                                     <p className="text-sm md:text-base">
@@ -46,7 +48,7 @@ export default function IndexPage() {
                             </div>
                             <div className="bg-white shadow-md rounded overflow-hidden">
                                 <img
-                                    src="destination2.jpg"
+                                    src={destination2}
                                     alt="Destination 2"
                                     className="w-full h-40 md:h-48 object-cover"
                                 />
@@ -59,7 +61,7 @@ export default function IndexPage() {
                             </div>
                             <div className="bg-white shadow-md rounded overflow-hidden">
                                 <img
-                                    src="destination3.jpg"
+                                    src={destination3}
                                     alt="Destination 3"
                                     className="w-full h-40 md:h-48 object-cover"
                                 />
