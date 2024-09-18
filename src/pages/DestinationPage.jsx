@@ -13,7 +13,7 @@ export default function DestinationPage() {
                     className="bg-cover bg-center h-screen flex items-center justify-center"
                     style={{ backgroundImage: `url(${rome})` }}
                 >
-                    <div className="text-center text-black px-4">
+                    <div className="text-center text-white px-4">
                         <h1 className="text-3xl sm:text-5xl font-bold mb-4">Explore Our Featured Destinations</h1>
                         <p className="text-sm sm:text-lg mb-8">Find your perfect getaway with our curated selection of world-class destinations.</p>
                         <Link to={"/destinations-list"} 
