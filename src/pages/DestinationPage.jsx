@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import bali from "../assets/bali.jpeg";
 import sidney from "../assets/sidney.jpeg";
 import rome from "../assets/rome.jpeg";
-import life from "../assets/life.jpeg";
 export default function DestinationPage() {
     return (
         <>
